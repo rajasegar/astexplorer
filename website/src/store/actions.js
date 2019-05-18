@@ -25,6 +25,7 @@ export const END_SAVE = 'END_SAVE';
 export const RESET = 'RESET';
 export const TOGGLE_FORMATTING = 'TOGGLE_FORMATTING';
 export const SET_KEY_MAP = 'SET_KEY_MAP';
+export const SET_THEME = 'SET_THEME';
 
 export function setParser(parser) {
   return {type: SET_PARSER, parser};
@@ -128,4 +129,9 @@ export function toggleFormatting() {
 
 export function setKeyMap(keyMap) {
   return {type: SET_KEY_MAP, keyMap}
+}
+
+
+export function setTheme(theme) {
+  return {type: SET_THEME, theme};
 }

@@ -233,6 +233,9 @@ function workbench(state=initialState.workbench, action, fullState) {
       }
     case actions.SET_KEY_MAP:
       return {...state, keyMap: action.keyMap};
+    case actions.SET_THEME:
+      console.log(action);
+      return { ...state, theme: action.theme };
     default:
       return state;
   }

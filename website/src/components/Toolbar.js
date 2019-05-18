@@ -5,6 +5,7 @@ import ParserButton from './buttons/ParserButton';
 import SnippetButton from './buttons/SnippetButton';
 import TransformButton from './buttons/TransformButton';
 import KeyMapButton from './buttons/KeyMapButton';
+import ThemesButton from './buttons/ThemesButton';
 
 export default function Toolbar(props) {
   let {parser, transformer, showTransformer} = props;
@@ -39,6 +40,7 @@ export default function Toolbar(props) {
       <ParserButton {...props} />
       <TransformButton {...props} />
       <KeyMapButton {...props} />
+      <ThemesButton {...props} />
       <a
         style={{minWidth: 0}}
         target="_blank" rel="noopener noreferrer"
@@ -60,6 +62,7 @@ Toolbar.propTypes = {
   onSave: PropTypes.func,
   onFork: PropTypes.func,
   onParserChange: PropTypes.func,
+  onThemeChange: PropTypes.func,
   onParserSettingsButtonClick: PropTypes.func,
   onShareButtonClick: PropTypes.func,
   onTransformChange: PropTypes.func,
@@ -69,4 +72,5 @@ Toolbar.propTypes = {
   showTransformer: PropTypes.bool,
   canSave: PropTypes.bool,
   canFork: PropTypes.bool,
+  theme: PropTypes.string,
 };

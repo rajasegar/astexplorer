@@ -22,6 +22,7 @@ export default class Editor extends React.Component {
     super(props);
     this.state = {
       value: props.value,
+      theme: 'default',
     };
   }
 
@@ -39,6 +40,11 @@ export default class Editor extends React.Component {
     if (nextProps.keyMap !== this.props.keyMap) {
       this.codeMirror.setOption('keyMap', nextProps.keyMap);
     }
+    
+    if (nextProps.theme !== this.props.theme) {
+      this.codeMirror.setOption('theme', nextProps.theme);
+    }
+
 
     this._setError(nextProps.error);
   }
@@ -90,6 +96,7 @@ export default class Editor extends React.Component {
         mode: this.props.mode,
         lineNumbers: this.props.lineNumbers,
         readOnly: this.props.readOnly,
+        theme: this.props.theme || 'default',
       }
     );
 
@@ -232,6 +239,7 @@ Editor.propTypes = {
   mode: PropTypes.string,
   enableFormatting: PropTypes.bool,
   keyMap: PropTypes.string,
+  theme: PropTypes.string,
 };
 
 Editor.defaultProps = {
@@ -241,6 +249,7 @@ Editor.defaultProps = {
   readOnly: false,
   mode: 'javascript',
   keyMap: 'default',
+  theme: 'default',
   onContentChange: () => {},
   onActivity: () => {},
 };

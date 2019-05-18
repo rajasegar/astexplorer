@@ -52,7 +52,7 @@ function App(props) {
             <SplitPane
               className="splitpane"
               onResize={resize}>
-              <CodeEditorContainer />
+              <CodeEditorContainer theme="default"/>
               <ASTOutputContainer />
             </SplitPane>
             {props.showTransformer ? <TransformerContainer /> : null}

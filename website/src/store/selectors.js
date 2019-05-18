@@ -36,6 +36,10 @@ export function isSaving(state) {
   return state.saving;
 }
 
+export function getTheme(state) {
+  return state.theme;
+}
+
 // Parser related
 
 export function getParser(state) {

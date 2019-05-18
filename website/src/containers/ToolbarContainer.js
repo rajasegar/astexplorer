@@ -9,6 +9,7 @@ import {
   setParser,
   reset,
   setKeyMap,
+  setTheme,
 } from '../store/actions';
 import Toolbar from '../components/Toolbar';
 import * as selectors from '../store/selectors';
@@ -28,6 +29,7 @@ function mapStateToProps(state) {
     keyMap: selectors.getKeyMap(state),
     showTransformer: selectors.showTransformer(state),
     snippet: selectors.getRevision(state),
+    theme: selectors.getTheme(state),
   };
 }
 
@@ -69,6 +71,11 @@ function mapDispatchToProps(dispatch) {
       } else {
         dispatch(reset());
       }
+    },
+    onThemeChange: theme => {
+      console.log(theme);
+      dispatch(setTheme(theme));
+      logEvent('theme', 'select', theme);
     },
   };
 }

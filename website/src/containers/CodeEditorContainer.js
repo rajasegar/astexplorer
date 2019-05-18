@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {setCode, setCursor} from '../store/actions';
 import Editor from '../components/Editor';
-import {getCode, getParser, getParseResult, getKeyMap} from '../store/selectors';
+import {getCode, getParser, getParseResult, getKeyMap, getTheme} from '../store/selectors';
 
 function mapStateToProps(state) {
   return {
@@ -9,6 +9,7 @@ function mapStateToProps(state) {
     value: getCode(state),
     mode: getParser(state).category.editorMode || getParser(state).category.id,
     error: (getParseResult(state) || {}).error,
+    theme: getTheme(state) || 'default',
   };
 }
 
